@@ -15,9 +15,9 @@ function correctTime(H,M){
 
 function romanTime (hour, minute){
     if (correctTime(hour,minute)) {
-	    return rim(hour,'')+' : '+rim(minute,'')
+        return rim(hour,'')+' : '+rim(minute,'')
     }
-		else return 'Время указано не верно';
+    else return 'Время указано не верно';
 }
 		
 var hours = process.argv[2];
