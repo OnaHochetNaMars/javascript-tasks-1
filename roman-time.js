@@ -1,10 +1,11 @@
-function Rim2(x,Res){
-    if (x>=50) {return Rim2(x-50,Res+'L')}
-        else if (x>=40) {return Rim2(x-40,Res+'XL')}
-            else if(x>=10) {return Rim2(x-10,Res+'X')}
-	        else if(x==9) {return Rim2(x-9,Res+'IX')}
-                    else if(x>=5) {return Rim2(x-5,Res+'V')}
-                        else if(x>=1) {return Rim2(x-1,Res+'I')}
+function rim(x,Res){
+if (x>=50) {return rim(x-50,Res+'L')}
+    else if (x>=40) {return rim(x-40,Res+'XL')}
+        else if (x>=10) {return rim(x-10,Res+'X')}
+            else if (x>=9) {return rim(x-9,Res+'IX')}
+                else if (x>=5) {return rim(x-5,Res+'V')}
+                    else if (x>=4) {return rim(x-1,Res+'IV')}
+                        else if (x>=1) {return rim(x-1,Res+'I')}
                             else return Res;
 }
 
@@ -14,9 +15,9 @@ function correctTime(H,M){
     }
 	    else return false}
 
-function RomanTime (hour, minute){
+function romanTime (hour, minute){
     if (correctTime(hour,minute)) {
-	    return Rim2(hour,'')+' : '+Rim2(minute,'')
+	    return rim(hour,'')+' : '+rim(minute,'')
     }
 		else return 'Время указано не верно';
 }
@@ -24,4 +25,4 @@ function RomanTime (hour, minute){
 var hours = process.argv[2];
 var minutes = process.argv[3];
 
-console.log(RomanTime(hours,minutes));
+console.log(romanTime(hours,minutes));
