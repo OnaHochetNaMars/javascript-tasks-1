@@ -10,10 +10,8 @@ if (x>=50) {return rim(x-50,Res+'L')}
 }
 
 function correctTime(H,M){
-    if (H>=0 && H<=24 && M>=0 && M<=59) {
-        return true
+    return (H>=0 && H<=23 && M>=0 && M<=59)
     }
-	    else return false}
 
 function romanTime (hour, minute){
     if (correctTime(hour,minute)) {
